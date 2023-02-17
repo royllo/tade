@@ -38,7 +38,8 @@ The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
 13. fringe 14. security 15. verb 16. cactus
 17. glad 18. fork 19. patch 20. conduct
 21. two 22. peace 23. just 24. detect
-    ---------------END LND CIPHER SEED-----------------
+---------------END LND CIPHER SEED-----------------
+
 
 Addresses :
 
