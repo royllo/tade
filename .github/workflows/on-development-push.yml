@@ -24,8 +24,8 @@ jobs:
       # ================================================================================================================
       - name: Build the images
         run: |
-          docker build lnd/ -t lnd:latest
-          docker build taro/ -t taro:latest  
+          docker build lnd/ -t royllo/lnd:latest
+          docker build taro/ -t royllo/taro:latest  
 
       # ================================================================================================================
       - name: Push the docker images to Docker hub
