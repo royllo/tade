@@ -1,0 +1,275 @@
+2023-02-17 15:19:49.515 [INF] LTND: Version: 0.15.99-beta commit=cert/v1.2.1-40-g4d7ac8277, build=production, logging=default, debuglevel=info
+2023-02-17 15:19:49.515 [INF] LTND: Active chain: Bitcoin (network=testnet)
+2023-02-17 15:19:49.515 [INF] RPCS: Generating TLS certificates...
+2023-02-17 15:19:49.515 [INF] RPCS: Done generating TLS certificates
+2023-02-17 15:19:49.516 [INF] RPCS: RPC server listening on 127.0.0.1:10009
+2023-02-17 15:19:49.518 [INF] RPCS: gRPC proxy started at 127.0.0.1:8080
+2023-02-17 15:19:49.518 [INF] LTND: Opening the main database, this might take a few minutes...
+2023-02-17 15:19:49.518 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2023-02-17 15:19:49.523 [INF] LTND: Creating local graph and channel state DB instances
+2023-02-17 15:19:49.528 [INF] CHDB: Checking for schema update: latest_version=29, db_version=29
+2023-02-17 15:19:49.528 [INF] CHDB: Checking for optional update: prune_revocation_log=false, db_version=empty
+2023-02-17 15:19:49.528 [INF] LTND: Database(s) now open (time_to_open=9.975444ms)!
+2023-02-17 15:19:49.539 [INF] BTCN: Loaded 0 addresses from file '/root/.lnd/data/chain/bitcoin/testnet/peers.json'
+2023-02-17 15:19:49.539 [INF] BTCN: Registering block subscription: id=1
+2023-02-17 15:19:49.540 [INF] LTND: We're not running within systemd or the service type is not 'notify'
+2023-02-17 15:19:49.540 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2023-02-17 15:19:49.540 [INF] BTCN: Broadcaster now active
+2023-02-17 15:19:49.584 [INF] BTCN: 22 addresses found from DNS seed x49.testnet-seed.bitcoin.jonasschnelli.ch
+2023-02-17 15:19:49.592 [INF] BTCN: DNS discovery failed on seed testnet-seed.bitcoin.schildbach.de: lookup testnet-seed.bitcoin.schildbach.de on 192.168.1.1:53: no such host
+2023-02-17 15:19:49.670 [INF] BTCN: 3 addresses found from DNS seed testnet-seed.bluematt.me
+2023-02-17 15:19:54.609 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 0...
+2023-02-17 15:19:54.609 [INF] BTCN: New valid peer 5.2.64.188:18333 (outbound) (/Satoshi:0.21.1/)
+2023-02-17 15:19:54.609 [INF] BTCN: Syncing to block height 2420407 from peer 5.2.64.188:18333
+2023-02-17 15:19:54.609 [INF] BTCN: Downloading headers for blocks 1 to 546 from peer 5.2.64.188:18333
+2023-02-17 15:19:54.692 [INF] BTCN: New valid peer 65.108.101.79:18333 (outbound) (/Satoshi:22.0.0/)
+2023-02-17 15:19:54.692 [INF] BTCN: New valid peer 65.109.24.172:18333 (outbound) (/Satoshi:22.0.0/)
+2023-02-17 15:19:54.730 [INF] BTCN: New valid peer 44.211.132.82:18333 (outbound) (/Satoshi:24.0.0/)
+2023-02-17 15:19:55.018 [INF] BTCN: New valid peer 13.231.203.177:18333 (outbound) (/Satoshi:24.0.1/)
+2023-02-17 15:19:56.693 [INF] BTCN: Lost peer 44.211.132.82:18333 (outbound)
+2023-02-17 15:19:56.725 [INF] BTCN: Verified downloaded block header against checkpoint at height 546/hash 000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70
+2023-02-17 15:19:57.001 [INF] BTCN: New valid peer 35.212.162.45:18333 (outbound) (/Satoshi:24.0.1/)
+2023-02-17 15:19:59.549 [INF] BTCN: DNS discovery failed on seed x49.seed.tbtc.petertodd.org: lookup x49.seed.tbtc.petertodd.org on 192.168.1.1:53: read udp 172.17.0.2:46718->192.168.1.1:53: i/o timeout
+2023-02-17 15:20:02.018 [INF] BTCN: Processed 547 blocks in the last 12.48s (height 547, 2012-05-25 17:14:29 +0000 UTC)
+2023-02-17 15:20:02.052 [INF] BTCN: Starting cfheaders sync from (block_height=0, block_hash=000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943) to (block_height=2546, block_hash=0000000023f26725771c9580c3be32ae847d429c25461ee6dc3a83007ce47151)
+2023-02-17 15:20:02.052 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:02.589 [INF] BTCN: Lost peer 13.231.203.177:18333 (outbound)
+2023-02-17 15:20:07.816 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=0, hash=21584579b7eb08997773e5aeff3a7f932700042d0ed2a6129012b7d7ae81b750
+2023-02-17 15:20:07.816 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=0, checkpoints=2
+2023-02-17 15:20:07.816 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:09.817 [WRN] BTCN: Query(0) from peer 35.212.162.45:18333 failed, rescheduling: did not get response before timeout
+2023-02-17 15:20:11.658 [INF] BTCN: Verified 1 filter header in the last 22.12s (height 1, 2011-02-02 23:22:08 +0000 UTC)
+2023-02-17 15:20:11.662 [INF] BTCN: Successfully got filter headers for 2 checkpoints
+2023-02-17 15:20:11.678 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 2000...
+2023-02-17 15:20:11.678 [INF] BTCN: Starting cfheaders sync from (block_height=2000, block_hash=0000000005bdbddb59a3cd33b69db94fa67669c41d9d32751512b5d7b68c71cf) to (block_height=6546, block_hash=000000000295f5e193569c606e57bfb1585b8872638df95a45499264c7f0efe0)
+2023-02-17 15:20:11.678 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:11.678 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=2000, hash=e04af40a72bc9313aada57f850c04179a353ca36fc2736ad1f41ea768300abae
+2023-02-17 15:20:11.678 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=2, checkpoints=6
+2023-02-17 15:20:11.678 [INF] BTCN: Attempting to query for 2 cfheader batches
+2023-02-17 15:20:13.679 [WRN] BTCN: Query(1) from peer 5.2.64.188:18333 failed, rescheduling: did not get response before timeout
+2023-02-17 15:20:13.878 [INF] BTCN: Successfully got filter headers for 6 checkpoints
+2023-02-17 15:20:13.878 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 6000...
+2023-02-17 15:20:17.285 [INF] BTCN: Processed 6000 blocks in the last 15.26s (height 6547, 2012-05-28 04:51:25 +0000 UTC)
+2023-02-17 15:20:17.312 [INF] BTCN: Starting cfheaders sync from (block_height=6000, block_hash=000000001ab69b12b73ccdf46c9fbb4489e144b54f1565e42e481c8405077bdd) to (block_height=8546, block_hash=0000000026f959602563a7ab3d4865b4567c9019d2d636bf115bae508d51d3ec)
+2023-02-17 15:20:17.312 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:17.312 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=6000, hash=f25e82a78977b2ac5a92216a3033551d5e59b10fb109b689a85e4b129be8bc61
+2023-02-17 15:20:17.313 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=6, checkpoints=8
+2023-02-17 15:20:17.313 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:17.498 [INF] BTCN: Successfully got filter headers for 8 checkpoints
+2023-02-17 15:20:17.499 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 8000...
+2023-02-17 15:20:22.704 [INF] BTCN: Starting cfheaders sync from (block_height=8000, block_hash=000000000d26c2f4c4f6f6a75d1684e5468cb92a44bd06329cab55763cce3389) to (block_height=10546, block_hash=0000000030dcd280dc4e49eb172f7b19285f765b2294e343eae3781d7d2e0f81)
+2023-02-17 15:20:22.704 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:22.704 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=8000, hash=b410fbee3599cc542894020fad2bcf7494f0612263570bfc8d48a2a34bdca7e0
+2023-02-17 15:20:22.704 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=8, checkpoints=10
+2023-02-17 15:20:22.704 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:22.887 [INF] BTCN: Verified 8000 filter headers in the last 11.22s (height 8001, 2012-05-28 04:55:27 +0000 UTC)
+2023-02-17 15:20:22.891 [INF] BTCN: Successfully got filter headers for 10 checkpoints
+2023-02-17 15:20:22.891 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 10000...
+2023-02-17 15:20:28.627 [INF] BTCN: Processed 4000 blocks in the last 11.34s (height 10547, 2012-05-28 05:02:32 +0000 UTC)
+2023-02-17 15:20:28.660 [INF] BTCN: Starting cfheaders sync from (block_height=10000, block_hash=000000000058b74204bb9d59128e7975b683ac73910660b6531e59523fb4a102) to (block_height=12546, block_hash=00000000248b58a7b877d723419806f73ad323243b89e6ffe127db6b2e905f9f)
+2023-02-17 15:20:28.660 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:28.660 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=10000, hash=0cba95b6f197260b9893f4fae0240efca039fb105e256037e66db8a9ead473d6
+2023-02-17 15:20:28.660 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=10, checkpoints=12
+2023-02-17 15:20:28.660 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:28.844 [INF] BTCN: Successfully got filter headers for 12 checkpoints
+2023-02-17 15:20:28.844 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 12000...
+2023-02-17 15:20:32.336 [INF] BTCN: Starting cfheaders sync from (block_height=12000, block_hash=000000004ad8f1f39fa3e3eb43791b9283337b09b06b4e75164dc5a9cb0262ff) to (block_height=14546, block_hash=000000004b620a4093f1d9140c191d68e7b069c48d40dc4d7f4667050004705a)
+2023-02-17 15:20:32.336 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:32.337 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=12000, hash=32158d918c19da8c950aed967c81186e1a36fd8dc2cf758bb8cfdb01183c06b6
+2023-02-17 15:20:32.337 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=12, checkpoints=14
+2023-02-17 15:20:32.337 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:32.523 [INF] BTCN: Successfully got filter headers for 14 checkpoints
+2023-02-17 15:20:32.523 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 14000...
+2023-02-17 15:20:36.569 [INF] BTCN: Starting cfheaders sync from (block_height=14000, block_hash=00000000163f4cc163aa78d53a201ebc18035d2ccc8cf53b7acb0c27026e9dee) to (block_height=16546, block_hash=00000000042bd5bcaf52e686133c2ed5f1b19fc320e2e2c1805ca1fef7482227)
+2023-02-17 15:20:36.569 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:36.569 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=14000, hash=330fadbf0f4d7b49fe3e7f0f1bde0011fd8de7134937e6568bdb7fd6f6913fdc
+2023-02-17 15:20:36.569 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=14, checkpoints=16
+2023-02-17 15:20:36.569 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:36.751 [INF] BTCN: Verified 6000 filter headers in the last 13.86s (height 14001, 2012-05-28 05:12:08 +0000 UTC)
+2023-02-17 15:20:36.756 [INF] BTCN: Successfully got filter headers for 16 checkpoints
+2023-02-17 15:20:36.756 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 16000...
+2023-02-17 15:20:42.595 [INF] BTCN: Processed 6000 blocks in the last 13.96s (height 16547, 2012-07-30 11:10:35 +0000 UTC)
+2023-02-17 15:20:42.628 [INF] BTCN: Starting cfheaders sync from (block_height=16000, block_hash=00000000add42ab5ebe18c689fba7375f7f8b13c1aad57781c277e3bbe83811b) to (block_height=18546, block_hash=0000000011ce784f49065806f81ccb2ed56124d12c84efc82fc65ba9e1eb3012)
+2023-02-17 15:20:42.628 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:42.628 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=16000, hash=2b156ad9992c227d05cc2f51d0d7f0f6eaa10356137700733dd71b85a4180873
+2023-02-17 15:20:42.628 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=16, checkpoints=18
+2023-02-17 15:20:42.628 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:42.819 [INF] BTCN: Successfully got filter headers for 18 checkpoints
+2023-02-17 15:20:42.819 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 18000...
+2023-02-17 15:20:46.629 [INF] BTCN: Starting cfheaders sync from (block_height=18000, block_hash=000000000347b4e61758a4e52cc53c8acbdaf3a246ba97993109fbd0f9988dd1) to (block_height=20546, block_hash=0000000016f4f74f10fb2f5499e1d869295d25df66c1e332d3285cd589121ba1)
+2023-02-17 15:20:46.629 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:46.629 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=18000, hash=01f9853dba38fa68bef842c34852865200949e9440db83413a8576c6a21543a8
+2023-02-17 15:20:46.629 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=18, checkpoints=20
+2023-02-17 15:20:46.629 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:46.812 [INF] BTCN: Verified 4000 filter headers in the last 10.06s (height 18001, 2012-07-31 01:25:32 +0000 UTC)
+2023-02-17 15:20:46.816 [INF] BTCN: Successfully got filter headers for 20 checkpoints
+2023-02-17 15:20:46.816 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 20000...
+2023-02-17 15:20:53.556 [INF] BTCN: Processed 4000 blocks in the last 10.96s (height 20547, 2012-08-19 01:29:00 +0000 UTC)
+2023-02-17 15:20:53.587 [INF] BTCN: Starting cfheaders sync from (block_height=20000, block_hash=0000000008ca11392fa91c4786e59823a002f4868bdb0c1385b12a2844cbc11f) to (block_height=22546, block_hash=0000000065646e307cd5041018f15e363335df7cb2b0cd814c8f26c140b73930)
+2023-02-17 15:20:53.587 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:53.587 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=20000, hash=1cf49df621628d958c3e2cc3c2be10d0f97c8081f36efcf05a0102b9cce62ada
+2023-02-17 15:20:53.587 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=20, checkpoints=22
+2023-02-17 15:20:53.587 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:53.775 [INF] BTCN: Successfully got filter headers for 22 checkpoints
+2023-02-17 15:20:53.775 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 22000...
+2023-02-17 15:20:57.099 [INF] BTCN: Starting cfheaders sync from (block_height=22000, block_hash=0000000021a6d163d8b57e70cdb3db193c10fb1f9f30700c3f14bd23ce915b12) to (block_height=24546, block_hash=0000000015da1a2c3f3613011d6fdf513646a7cd8455b12c6431a55c3c4cb018)
+2023-02-17 15:20:57.099 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:20:57.099 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=22000, hash=88d493aef31b23e4fbcef552ae36cfded9912c71a8acf0d6ab05285a0c381758
+2023-02-17 15:20:57.099 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=22, checkpoints=24
+2023-02-17 15:20:57.099 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:20:57.290 [INF] BTCN: Verified 4000 filter headers in the last 10.47s (height 22001, 2012-09-01 16:13:54 +0000 UTC)
+2023-02-17 15:20:57.295 [INF] BTCN: Successfully got filter headers for 24 checkpoints
+2023-02-17 15:20:57.295 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 24000...
+2023-02-17 15:21:00.628 [INF] BTCN: Starting cfheaders sync from (block_height=24000, block_hash=000000005e6c627c2126e1e52f42d2f4112a89952d6d7bacea0f5b56271afc7e) to (block_height=26546, block_hash=00000000729a5f6d229d5f4bf5f3579bf3024b6da1dff510af3ff1badeed917e)
+2023-02-17 15:21:00.628 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:00.629 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=24000, hash=a13ca73f7303be327c4e7cb7be0b7bd8b2fa01d7a8fe4534788f09f6a091a469
+2023-02-17 15:21:00.629 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=24, checkpoints=26
+2023-02-17 15:21:00.629 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:00.816 [INF] BTCN: Successfully got filter headers for 26 checkpoints
+2023-02-17 15:21:00.816 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 26000...
+2023-02-17 15:21:01.929 [INF] LNWL: Opened wallet
+2023-02-17 15:21:01.977 [INF] CHRE: Primary chain is set to: bitcoin
+2023-02-17 15:21:01.989 [INF] CHRE: Using external fee estimator https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json: cached=true
+2023-02-17 15:21:01.989 [INF] LNWL: Starting web API fee estimator
+2023-02-17 15:21:03.405 [INF] LNWL: The wallet has been unlocked without a time limit
+2023-02-17 15:21:03.433 [INF] CHRE: LightningWallet opened
+2023-02-17 15:21:03.439 [INF] HSWC: Cleaning circuits from disk for closed channels
+2023-02-17 15:21:03.439 [INF] HSWC: Finished cleaning: no closed channels found, no actions taken.
+2023-02-17 15:21:03.439 [INF] HSWC: Restoring in-memory circuit state from disk
+2023-02-17 15:21:03.440 [INF] HSWC: Payment circuits loaded: num_pending=0, num_open=0
+2023-02-17 15:21:03.446 [INF] SWPR: Migrating UTXO nursery finalized TXIDs
+2023-02-17 15:21:03.447 [INF] LTND: Channel backup proxy channel notifier starting
+2023-02-17 15:21:03.447 [INF] ATPL: Instantiating autopilot with active=false, max_channels=5, allocation=0.600000, min_chan_size=20000, max_chan_size=16777215, private=false, min_confs=1, conf_target=3
+2023-02-17 15:21:03.448 [INF] IRPC: Baking macaroons for invoices RPC Server at: /root/.lnd/data/chain/bitcoin/testnet/invoices.macaroon
+2023-02-17 15:21:03.448 [INF] SGNR: Making macaroons for Signer RPC Server at: /root/.lnd/data/chain/bitcoin/testnet/signer.macaroon
+2023-02-17 15:21:03.449 [INF] WLKT: Baking macaroons for WalletKit RPC Server at: /root/.lnd/data/chain/bitcoin/testnet/walletkit.macaroon
+2023-02-17 15:21:03.450 [INF] RRPC: Making macaroons for Router RPC Server at: /root/.lnd/data/chain/bitcoin/testnet/router.macaroon
+2023-02-17 15:21:03.451 [INF] NTFR: Baking macaroons for ChainNotifier RPC Server at: /root/.lnd/data/chain/bitcoin/testnet/chainnotifier.macaroon
+2023-02-17 15:21:03.451 [INF] LTND: We're not running within systemd or the service type is not 'notify'
+2023-02-17 15:21:03.451 [INF] LTND: Waiting for chain backend to finish sync, start_height=26000
+2023-02-17 15:21:04.596 [INF] BTCN: Processed 6000 blocks in the last 11.04s (height 26547, 2012-09-18 11:35:38 +0000 UTC)
+2023-02-17 15:21:04.634 [INF] BTCN: Starting cfheaders sync from (block_height=26000, block_hash=000000000e0153bc9f2ea52740cf7ce20a12678d76f811bd9c91f7acbb3862ca) to (block_height=28546, block_hash=000000000e4cefed73ad9a59bd986e6881b63aca7e8d01551747a42a67612011)
+2023-02-17 15:21:04.634 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:04.634 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=26000, hash=cf52ba345fc7fdb49ef2ea39b92a693fbea4c8ce2fcee4d2e8f3bbd708260d1a
+2023-02-17 15:21:04.634 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=26, checkpoints=28
+2023-02-17 15:21:04.634 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:04.821 [INF] BTCN: Successfully got filter headers for 28 checkpoints
+2023-02-17 15:21:04.821 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 28000...
+2023-02-17 15:21:08.606 [INF] BTCN: Starting cfheaders sync from (block_height=28000, block_hash=0000000013bb07c6fe855814fcc92661b45022c843960b7760433319cddfae9e) to (block_height=30546, block_hash=00000000042471c4f77d0c9d8d8e15f17820850796e74ed93548ec701f0a4e13)
+2023-02-17 15:21:08.606 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:08.606 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=28000, hash=a8f75342462ced448aaac2d7ee4c7d68d41721195d74813589ff17c272a007b3
+2023-02-17 15:21:08.606 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=28, checkpoints=30
+2023-02-17 15:21:08.606 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:08.792 [INF] BTCN: Verified 6000 filter headers in the last 11.5s (height 28001, 2012-09-28 03:47:49 +0000 UTC)
+2023-02-17 15:21:08.797 [INF] BTCN: Successfully got filter headers for 30 checkpoints
+2023-02-17 15:21:08.797 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 30000...
+2023-02-17 15:21:09.921 [INF] BTCN: Starting cfheaders sync from (block_height=30000, block_hash=000000001036e9539cc6ed03d7b265618004138eb378ddb3921ee93ba30817ab) to (block_height=32546, block_hash=00000000008ccd93942de234cb63aa57ad6215b7101aa9056cae28c4029f309f)
+2023-02-17 15:21:09.921 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:09.921 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=30000, hash=11f602b9d5c32c0dbdc0a64860e6288696f366fd5cf88892df1579f877143fbb
+2023-02-17 15:21:09.921 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=30, checkpoints=32
+2023-02-17 15:21:09.921 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:10.132 [INF] BTCN: Successfully got filter headers for 32 checkpoints
+2023-02-17 15:21:10.133 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 32000...
+2023-02-17 15:21:15.312 [INF] BTCN: Processed 6000 blocks in the last 10.71s (height 32547, 2012-10-04 20:15:18 +0000 UTC)
+2023-02-17 15:21:15.349 [INF] BTCN: Starting cfheaders sync from (block_height=32000, block_hash=00000000027602f65768306573a0a421bf19bb53b0bfc8bd1c731621749e6eba) to (block_height=34546, block_hash=00000000001013ed5449a01d90c5ed406f1254b8c116edd34d91efccdc3f4add)
+2023-02-17 15:21:15.349 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:15.349 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=32000, hash=fa26f3d6fbdf8342150b6638d53d70a8d7fcab0947a665b09a63b1625760966a
+2023-02-17 15:21:15.349 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=32, checkpoints=34
+2023-02-17 15:21:15.349 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:15.536 [INF] BTCN: Successfully got filter headers for 34 checkpoints
+2023-02-17 15:21:15.536 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 34000...
+2023-02-17 15:21:19.937 [INF] BTCN: Starting cfheaders sync from (block_height=34000, block_hash=00000000dfc7f64478db7356addeae9e926c43461a71dca813ccab9a2949ce03) to (block_height=36546, block_hash=0000000000cfa48bbb903f6187f42c75caa3710b0400e77b7ec583f7e6b19c28)
+2023-02-17 15:21:19.937 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:19.937 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=34000, hash=b025cc2590a62283dad70777bcc63cd35a575932ce3ff18b6e8353508623dd6e
+2023-02-17 15:21:19.937 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=34, checkpoints=36
+2023-02-17 15:21:19.937 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:20.119 [INF] BTCN: Verified 6000 filter headers in the last 11.32s (height 34001, 2012-10-30 04:36:02 +0000 UTC)
+2023-02-17 15:21:20.124 [INF] BTCN: Successfully got filter headers for 36 checkpoints
+2023-02-17 15:21:20.124 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 36000...
+2023-02-17 15:21:23.543 [INF] BTCN: Starting cfheaders sync from (block_height=36000, block_hash=0000000000ac6b824ebe5d10bbe9f23d076611a3e648f20f8acd815e2f6478a2) to (block_height=38546, block_hash=000000000052b776ffe7a04d0f315413f66745f4c4b8b6de6c0aa9000a84359d)
+2023-02-17 15:21:23.543 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:23.543 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=36000, hash=fa85dbe2920de1e1924e7ccfc25d91c9df81a071e5ebb877efeab8d308e2a856
+2023-02-17 15:21:23.543 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=36, checkpoints=38
+2023-02-17 15:21:23.544 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:23.727 [INF] BTCN: Successfully got filter headers for 38 checkpoints
+2023-02-17 15:21:23.727 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 38000...
+2023-02-17 15:21:27.856 [INF] BTCN: Processed 6000 blocks in the last 12.54s (height 38547, 2012-11-26 02:27:04 +0000 UTC)
+2023-02-17 15:21:27.894 [INF] BTCN: Starting cfheaders sync from (block_height=38000, block_hash=00000000015ca58fcbd28cdb69e5c4d07a23a7d09a8979ba267cbf2ecf4b3331) to (block_height=40546, block_hash=000000006eebdbf702e0d78ebac5880023ca4ce2458987aeb1319025e4b3ed9f)
+2023-02-17 15:21:27.894 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:27.894 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=38000, hash=f77f432ae7af3b0c83581608ecca88975f62e353dbf651ba0f62cef6032edf30
+2023-02-17 15:21:27.894 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=38, checkpoints=40
+2023-02-17 15:21:27.894 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:28.106 [INF] BTCN: Successfully got filter headers for 40 checkpoints
+2023-02-17 15:21:28.106 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 40000...
+2023-02-17 15:21:31.802 [INF] BTCN: Starting cfheaders sync from (block_height=40000, block_hash=000000007c0cee02104b825bf341213a71776e64ad9b60b2d77d3d13381515ce) to (block_height=42546, block_hash=0000000014c5e07e31c8b4ee23c29065b26655998b255a26f157d51332b35245)
+2023-02-17 15:21:31.802 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:31.802 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=40000, hash=50963e472d9dbf620a475a7a2c2ba1dde27d6ce7356d3c1ab785d5f36b27d0cb
+2023-02-17 15:21:31.802 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=40, checkpoints=42
+2023-02-17 15:21:31.802 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:31.984 [INF] BTCN: Verified 6000 filter headers in the last 11.86s (height 40001, 2012-12-16 16:05:42 +0000 UTC)
+2023-02-17 15:21:31.989 [INF] BTCN: Successfully got filter headers for 42 checkpoints
+2023-02-17 15:21:31.989 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 42000...
+2023-02-17 15:21:32.889 [INF] BTCN: Registering block subscription: id=2
+2023-02-17 15:21:35.656 [INF] BTCN: Starting cfheaders sync from (block_height=42000, block_hash=00000000a4b494f70fc3e62ff414da13f86d685aa5eb3b38c19d18baa147b280) to (block_height=44546, block_hash=000000000144bb7990889fb4d53bb456ff2b8ffd3d3165ad6a83f42f6b84315a)
+2023-02-17 15:21:35.656 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:35.657 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=42000, hash=cfdf774394d8ca496206771586be2b0addddd436837c1589db8ab94e2d19ff09
+2023-02-17 15:21:35.657 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=42, checkpoints=44
+2023-02-17 15:21:35.657 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:35.846 [INF] BTCN: Successfully got filter headers for 44 checkpoints
+2023-02-17 15:21:35.846 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 44000...
+2023-02-17 15:21:39.934 [INF] BTCN: Processed 6000 blocks in the last 12.07s (height 44547, 2012-12-26 21:13:07 +0000 UTC)
+2023-02-17 15:21:39.973 [INF] BTCN: Starting cfheaders sync from (block_height=44000, block_hash=0000000031d4f882dbb1c3ad85aee9d32927e0f83237b4ca4b55b6e5e273b66d) to (block_height=46546, block_hash=000000006d7b0a11713546e5c6ce355ab73934ebc4373758fb497d950dcc1064)
+2023-02-17 15:21:39.973 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:39.973 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=44000, hash=6b16d5b18d328b1e278da1e4ac63a2fd052bb0be52788d3418e0f716725b6e6f
+2023-02-17 15:21:39.973 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=44, checkpoints=46
+2023-02-17 15:21:39.973 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:40.184 [INF] BTCN: Successfully got filter headers for 46 checkpoints
+2023-02-17 15:21:40.184 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 46000...
+2023-02-17 15:21:43.670 [INF] BTCN: Starting cfheaders sync from (block_height=46000, block_hash=0000000091f89670093c9c4a168f73316908efbf8c4afb17291a5c15e03b4c5a) to (block_height=48546, block_hash=00000000cfa62378d5ff46d16a3dd870e14698b858f7dab17bdcc1f31889afc7)
+2023-02-17 15:21:43.670 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:43.670 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=46000, hash=02870b75eaf1ca717d147ce607e47d31d35be8896626978e306946d001516a88
+2023-02-17 15:21:43.670 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=46, checkpoints=48
+2023-02-17 15:21:43.670 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:43.851 [INF] BTCN: Verified 6000 filter headers in the last 11.86s (height 46001, 2012-12-31 22:18:38 +0000 UTC)
+2023-02-17 15:21:43.861 [INF] BTCN: Successfully got filter headers for 48 checkpoints
+2023-02-17 15:21:43.861 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 48000...
+2023-02-17 15:21:47.823 [INF] BTCN: Starting cfheaders sync from (block_height=48000, block_hash=00000000ad1acdfd226da1f29066cc2c2dd0410dcd88f8f88d99294629733bbc) to (block_height=50546, block_hash=000000000e448443f7c07bdd42a39ed6fe16a0c6088dac960ecdc30c484d6007)
+2023-02-17 15:21:47.823 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:47.823 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=48000, hash=7b48427ca327f19174113e9d2f7c32607b04c2e906e5badd4d7c7b635c54e034
+2023-02-17 15:21:47.823 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=48, checkpoints=50
+2023-02-17 15:21:47.823 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:48.010 [INF] BTCN: Successfully got filter headers for 50 checkpoints
+2023-02-17 15:21:48.010 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 50000...
+2023-02-17 15:21:51.159 [INF] BTCN: Processed 6000 blocks in the last 11.22s (height 50547, 2013-02-11 09:57:55 +0000 UTC)
+2023-02-17 15:21:51.200 [INF] BTCN: Starting cfheaders sync from (block_height=50000, block_hash=00000000077eacdd2c803a742195ba430a6d9545e43128ba55ec3c80beea6c0c) to (block_height=52546, block_hash=0000000003c56a48ca5e57ac893faefe79df193a8fc7da19a8f3220db806e63c)
+2023-02-17 15:21:51.201 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:51.201 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=50000, hash=dadfe326f43448519e33dfe5aae76006dce095b6ee916411e10ee2beb247b2a6
+2023-02-17 15:21:51.201 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=50, checkpoints=52
+2023-02-17 15:21:51.201 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:51.392 [INF] BTCN: Successfully got filter headers for 52 checkpoints
+2023-02-17 15:21:51.392 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 52000...
+2023-02-17 15:21:54.157 [INF] BTCN: Starting cfheaders sync from (block_height=52000, block_hash=00000000066aac1dd21f3dedb1cec98293c33c11233608401b3bf735f2112ebd) to (block_height=54546, block_hash=00000000aaf40661e269aed9ee007daf9552ef3d8544a3c62286be62ad1313e7)
+2023-02-17 15:21:54.157 [INF] BTCN: Starting cfheaders sync for filter_type=0
+2023-02-17 15:21:54.157 [INF] BTCN: Fetching set of checkpointed cfheaders filters from height=52000, hash=5026cde4744341f9aecd456d2ae2227fff3ffccbfd211ee9055445d98adb6df5
+2023-02-17 15:21:54.157 [INF] BTCN: Starting to query for cfheaders from checkpoint_interval=52, checkpoints=54
+2023-02-17 15:21:54.157 [INF] BTCN: Attempting to query for 1 cfheader batches
+2023-02-17 15:21:54.343 [INF] BTCN: Verified 6000 filter headers in the last 10.49s (height 52001, 2013-02-14 16:12:04 +0000 UTC)
+2023-02-17 15:21:54.351 [INF] BTCN: Successfully got filter headers for 54 checkpoints
+2023-02-17 15:21:54.351 [INF] BTCN: Waiting for more block headers, then will start cfheaders sync from height 54000...
+2023-02-17 15:21:55.030 [INF] LTND: Received interrupt
+2023-02-17 15:21:55.030 [INF] LTND: Shutting down...
+2023-02-17 15:21:55.030 [INF] LTND: Gracefully shutting down.
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping InvoicesRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping VersionRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping WatchtowerClientRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping SignRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping WalletKitRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping RouterRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] RPCS: Stopping ChainRPC Sub-RPC Server
+2023-02-17 15:21:55.489 [INF] BTCN: Canceling block subscription: id=1
+2023-02-17 15:21:55.540 [INF] BTCN: Block manager shutting down
+2023-02-17 15:21:55.590 [INF] BTCN: Address manager shutting down
+2023-02-17 15:21:55.592 [INF] LNWL: Stopping web API fee estimator
+2023-02-17 15:21:55.592 [INF] LTND: Shutdown complete
+
