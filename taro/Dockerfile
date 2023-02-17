@@ -38,7 +38,7 @@ RUN apk --no-cache add \
 # Copy the binaries from the builder image and configuration. \
 COPY --from=builder /go/bin/tarod /bin/
 COPY --from=builder /go/bin/tarocli /bin/
-COPY taro.conf /root/.taro
+COPY volume/ /root/.taro
 
 # Expose ports
 EXPOSE 10029 8089

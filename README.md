@@ -1,54 +1,29 @@
 # A docker-compose file to build and run LND and Taro
 
-## What's inside ?
+## Goals
 
-The `docker-compose.yaml` runs:
+For a newcomer, setting up taro is not easy! lots of steps are required (Build Lnd, create wallet, setup neutrino,
+build taro, set certificate paths, set macaroons...) and if, like me, you are developing on top of Taro (calling its
+API, getting data...), you don't want to lose too much time on things like that.
 
-- A volume that shares the `.lnd` directory from the lnd image.
-- LND node (neutrino) with a wallet already configured and unlocked.
-- A Taro server connecting to the previous LND image.
+With this project, with only one command, you start an LND node (with a configured and unlocked wallet) and Taro (with
+RPC called enabled).
 
-## Run it
+You can focus on your project and not on the infrastructure.
 
-Run docker-compose up
+## Run
 
-wait for : 
+- Download the project: `git clone https://github.com/royllo/lnd-taro-with-docker.git`
+- Go to the project directory: `cd lnd-taro-with-docker`
+- Start LND and Tarod: `docker-compose up`
 
-taro_1  | 2023-02-17 21:07:46.507 [INF] CONF: Attempting to establish connection to lnd...
+After some time, you will see this line : `SRVR: Taro Daemon fully active!`
 
-taro_1  | 2023-02-17 21:10:34.904 [INF] SRVR: Taro Daemon fully active!
-
-sudo cp /var/lib/docker/volumes/taro/_data/data/testnet/admin.macaroon .
-
-
-Call it with curl.
-
-curl -k https://localhost:8089/v1/taro/assets --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)"
-
-
-## Configure and build images
-
-To create the two images (lnd & taro):
+You can now Taro services with a command like this:
 
 ```
-docker build taro/lnd/ -t lnd
-docker build taro/taro/ -t taro
-```
-
-In the `lnd` directory, you will find the configuration here: `lnd/volume/lnd.conf`.
-In the `taro` directory, you will find the configuration here: `lnd/taro.conf`.
-
-## Run separately
-
-To make it run, you first need to create a common volume to share data, then run lnd, then create a wallet and run taro:
-
-```
-docker rm $(docker ps -aq --filter name=lnd)
-docker rm $(docker ps -aq --filter name=taro)
-docker volume create lnd
-
-docker run --name lnd -v lnd:/root/.lnd -p 9735:9735 -p 10009:10009 lnd:latest
-docker run --name taro -v lnd:/root/.lnd -p 10029:10029 -p 8089:8089 taro:latest
+curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
+        -k https://localhost:8089/v1/taro/assets
 ```
 
 ## Wallet configured in LND
@@ -63,7 +38,7 @@ The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
 13. fringe 14. security 15. verb 16. cactus
 17. glad 18. fork 19. patch 20. conduct
 21. two 22. peace 23. just 24. detect
----------------END LND CIPHER SEED-----------------
+    ---------------END LND CIPHER SEED-----------------
 
 Addresses :
 
