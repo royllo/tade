@@ -5,6 +5,9 @@ version: "3.7"
 # You can list them with the command: 'docker volume ls'
 volumes:
   lnd:
+    name: lnd
+  taro:
+    name: taro
 
 # ======================================================================================================================
 # Services (Docker images).
@@ -35,5 +38,6 @@ services:
       - "10029:10029"
     volumes:
       - lnd:/root/.lnd
+      - taro:/root/.taro
     depends_on:
       - lnd

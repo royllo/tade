@@ -8,6 +8,24 @@ The `docker-compose.yaml` runs:
 - LND node (neutrino) with a wallet already configured and unlocked.
 - A Taro server connecting to the previous LND image.
 
+## Run it
+
+Run docker-compose up
+
+wait for : 
+
+taro_1  | 2023-02-17 21:07:46.507 [INF] CONF: Attempting to establish connection to lnd...
+
+taro_1  | 2023-02-17 21:10:34.904 [INF] SRVR: Taro Daemon fully active!
+
+sudo cp /var/lib/docker/volumes/taro/_data/data/testnet/admin.macaroon .
+
+
+Call it with curl.
+
+curl -k https://localhost:8089/v1/taro/assets --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)"
+
+
 ## Configure and build images
 
 To create the two images (lnd & taro):

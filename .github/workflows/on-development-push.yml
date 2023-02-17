@@ -1,0 +1,34 @@
+name: Push on develop - Build & push them to docker hub
+
+on:
+  push:
+    branches:
+      - "development"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      # ================================================================================================================
+      - name: Retrieve the sources
+        uses: actions/checkout@v3
+
+      # ================================================================================================================
+      - name: Build the images
+        run: |
+          docker build taro/lnd/ -t lnd:latest
+          docker build taro/taro/ -t taro:latest  
+
+      # ================================================================================================================
+      - name: Docker Hub login
+        uses: docker/login-action@v2.1.0
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      # ================================================================================================================
+      - name: Push the docker images to Docker hub
+        run: |
+          docker push royllo/lnd:latest
+          docker push royllo/taro:latest
