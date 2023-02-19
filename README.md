@@ -23,8 +23,17 @@ You can now Taro services with a command like this:
 
 ```
 curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
-        -k https://localhost:8089/v1/taro/assets
+        --insecure https://localhost:8089/v1/taro/assets
 ```
+
+You can decode a proof with this command:
+
+```
+curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
+        --data @raw_proof \
+        --insecure https://localhost:8089/v1/taro/proofs/decode
+```
+
 
 ## Wallet configured in LND
 
