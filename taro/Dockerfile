@@ -7,8 +7,8 @@ ENV GODEBUG netdns=cgo
 # Pass a tag, branch or a commit using build-arg.  This allows a docker
 # image to be built from a specified Git state.  The default image
 # will use the Git tip of master by default.
-ARG checkout="main"
-ARG git_url="https://github.com/lightninglabs/taro"
+ARG checkout="decode-proof"
+ARG git_url="https://github.com/habibitcoin/taro"
 
 # Install dependencies and build the binaries.
 RUN apk add --no-cache --update alpine-sdk \
