@@ -20,6 +20,7 @@ services:
       context: ./lnd
       dockerfile: Dockerfile
     hostname: lnd
+    restart: always
     ports:
       - "9735:9735"
       - "10009:10009"
@@ -33,6 +34,7 @@ services:
       context: ./taro
       dockerfile: Dockerfile
     hostname: taro
+    restart: always
     ports:
       - "8089:8089"
       - "10029:10029"
