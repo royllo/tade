@@ -44,7 +44,7 @@ You can now Taro services with a command like this:
 
 ```
 curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
-        --insecure https://localhost:8089/v1/taro/assets
+        --insecure https://localhost:8089/v1/taproot-assets/assets
 ```
 
 You can decode a proof with this command:
@@ -92,8 +92,5 @@ Then you can do an `ls` on the `Mountpoint` path.
 `docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)`
 
 
-
-- If you want to remove everything, just
-  type .
 - You can get information about lnd with the
   command: `docker exec -it lnd /bin/lncli --macaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon getinfo`.
