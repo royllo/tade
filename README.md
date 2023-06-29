@@ -1,15 +1,28 @@
-# A docker-compose file to build and run LND and Taro
+# Taproot Assets docker environment (Running lnd tapd with a docker-compose)
 
 ## Goals
 
-For a newcomer, setting up taro is not easy! lots of steps are required (Build Lnd, create wallet, setup neutrino,
-build taro, set certificate paths, set macaroons...) and if, like me, you are developing on top of Taro (calling its
-API, getting data...), you don't want to lose too much time on things like that.
+For a newcomer, setting up tapd to play with Taproot Assets is not easy!
+
+Lots of steps are required (Build Lnd, create wallet, setup neutrino, build tapd, certificate paths, set macaroons...) 
+and if, like me, you are developing things using Taproot Assets (calling its API, getting data...), you don't want to 
+lose too much time on things like that.
 
 With this project, with only one command, you start an LND node (with a configured and unlocked wallet) and Taro (with
 RPC called enabled).
 
-You can focus on your project and not on the infrastructure.
+You can focus on your project.
+
+## How it works
+
+This project uses docker-compose to start two containers:
+- **lnd** : LND node with a configured and unlocked wallet.
+- **tapd** : Taproot Assets daemon with RPC enabled.
+
+
+
+
+
 
 ## Run
 
