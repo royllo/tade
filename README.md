@@ -19,7 +19,10 @@ This project uses docker-compose to start two containers:
 - **lnd** : LND node with a configured and unlocked wallet.
 - **tapd** : Taproot Assets daemon with RPC enabled.
 
+`lnd` and `tapd` images include the configuration files you can find in `tapd/volumes` and `lnd/volume` directory.
 
+This has been done by changing the Dockerfile of the `lnd` and `tapd` images with the command `COPY volume/ /root/.tapd`
+and `COPY volume/ /root/.lnd`.
 
 
 

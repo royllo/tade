@@ -1,4 +1,4 @@
-FROM golang:1.19.2-alpine as builder
+FROM golang:1.20.5-alpine as builder
 
 # Force Go to use the cgo based DNS resolver. This is required to ensure DNS
 # queries required to connect to linked containers succeed.
@@ -7,24 +7,24 @@ ENV GODEBUG netdns=cgo
 # Pass a tag, branch or a commit using build-arg.  This allows a docker
 # image to be built from a specified Git state.  The default image
 # will use the Git tip of master by default.
-ARG checkout="decode-proof"
-ARG git_url="https://github.com/habibitcoin/taro"
+ARG checkout="main"
+ARG git_url="https://github.com/lightninglabs/taproot-assets"
 
 # Install dependencies and build the binaries.
 RUN apk add --no-cache --update alpine-sdk \
     git \
     make \
     gcc \
-&&  git clone $git_url /go/src/github.com/lightninglabs/taro \
-&&  cd /go/src/github.com/lightninglabs/taro \
+&&  git clone $git_url /go/src/github.com/lightninglabs/taproot-assets \
+&&  cd /go/src/github.com/lightninglabs/taproot-assets \
 &&  git checkout $checkout \
-&&  make install
+&&  make release-install
 
 # Start a new, final image.
 FROM alpine as final
 
 # Define a root volume for data persistence.
-VOLUME /root/.taro
+VOLUME /root/.tapd
 
 # Add utilities for quality of life and SSL-related reasons. We also require
 # curl and gpg for the signature verification script.
@@ -35,13 +35,20 @@ RUN apk --no-cache add \
     gnupg \
     curl
 
-# Copy the binaries from the builder image and configuration. \
-COPY --from=builder /go/bin/tarod /bin/
-COPY --from=builder /go/bin/tarocli /bin/
-COPY volume/ /root/.taro
+# Copy the binaries from the builder image.
+COPY --from=builder /go/bin/tapcli /bin/
+COPY --from=builder /go/bin/tapd /bin/
 
-# Expose ports
+# Copy configuration files
+COPY volume/ /root/.tapd
+
+# Store the SHA256 hash of the binaries that were just produced for later
+# verification.
+RUN sha256sum /bin/tapd /bin/tapcli > /shasums.txt \
+  && cat /shasums.txt
+
+# Expose tapd ports (gRPC, REST).
 EXPOSE 10029 8089
 
-# Specify the start command and entrypoint as the lnd daemon.
-ENTRYPOINT ["tarod"]
+# Specify the start command and entrypoint as the tapd daemon.
+ENTRYPOINT ["tapd"]
