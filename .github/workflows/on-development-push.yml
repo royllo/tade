@@ -25,10 +25,10 @@ jobs:
       - name: Build the images
         run: |
           docker build lnd/ -t royllo/lnd:latest
-          docker build taro/ -t royllo/taro:latest  
+          docker build tapd/ -t royllo/tapd:latest  
 
       # ================================================================================================================
       - name: Push the docker images to Docker hub
         run: |
           docker push royllo/lnd:latest
-          docker push royllo/taro:latest
+          docker push royllo/tapd:latest
