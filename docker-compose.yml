@@ -6,8 +6,8 @@ version: "3.7"
 volumes:
   lnd:
     name: lnd
-  taro:
-    name: taro
+  tapd:
+    name: tapd
 
 # ======================================================================================================================
 # Services (Docker images).
@@ -29,17 +29,17 @@ services:
 
   # ====================================================================================================================
   # TARO.
-  taro:
+  tapd:
     build:
       context: tapd
       dockerfile: Dockerfile
-    hostname: taro
+    hostname: tapd
     restart: always
     ports:
       - "8089:8089"
       - "10029:10029"
     volumes:
       - lnd:/root/.lnd
-      - taro:/root/.taro
+      - tapd:/root/.tapd
     depends_on:
       - lnd

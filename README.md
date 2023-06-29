@@ -24,11 +24,16 @@ This project uses docker-compose to start two containers:
 This has been done by changing the Dockerfile of the `lnd` and `tapd` images with the command `COPY volume/ /root/.tapd`
 and `COPY volume/ /root/.lnd`.
 
+The tapd image have access to the /root/.lnd directory from the lnd image. This is done by adding the following line in docker-compose.yml:
+```
+lnd:/root/.lnd
+```
 
+When lnd starts, a wallet is configured and unlocked (The password is `C4-t]-#6uV{BVPQ~`).
 
+## How to use it
 
-## Run
-
+TODO Set the new name.
 - Download the project: `git clone https://github.com/royllo/lnd-taro-with-docker.git`
 - Go to the project directory: `cd lnd-taro-with-docker`
 - Start LND and Tarod: `docker-compose up`
@@ -65,7 +70,6 @@ The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
 21. two 22. peace 23. just 24. detect
 ---------------END LND CIPHER SEED-----------------
 
-
 Addresses :
 
 - **p2wkh** : tb1q9ep90x63j3n5dqqyn3jjf8kmpzf65tttupudyg
@@ -73,7 +77,23 @@ Addresses :
 
 ## Tips
 
+### Remove all volumes
+```
+docker-compose down --volumes
+docker volume rm $(docker volume ls -q)
+```
+
+### List files inside a docker volume
+`docker inspect <volume_name>`
+Then you can do an `ls` on the `Mountpoint` path.
+`sudo ls /var/lib/docker/volumes/lnd/_data`
+
+### Remove everything docker
+`docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)`
+
+
+
 - If you want to remove everything, just
-  type `docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)`.
+  type .
 - You can get information about lnd with the
   command: `docker exec -it lnd /bin/lncli --macaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon getinfo`.
