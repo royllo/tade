@@ -13,6 +13,35 @@ RPC called enabled).
 
 You can focus on your project.
 
+## How to use it
+
+TODO Set the new name.
+- Download the project: `git clone https://github.com/royllo/tade.git`
+- Go to the project directory: `cd tade`
+- Start LND and Tapd: `docker-compose up`
+
+After some time, you will see this line : `SRVR: Taro Daemon fully active!`
+
+Then, retrieve the macaroon FROM TAPD!!! :
+- `docker volume inspect lnd` to get the path of the volume.
+- `sudo cp /var/lib/docker/volumes/tapd/_data/data/testnet/admin.macaroon .` to get the macaroon.
+- `sudo chown <your_user> admin.macaroon` to change the owner of the file.
+
+You can now Taro services with a command like this:
+
+```
+curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
+        --insecure https://localhost:8089/v1/taproot-assets/assets
+```
+
+You can decode a proof with this command:
+
+```
+curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
+        --data @raw_proof \
+        --insecure https://localhost:8089/v1/taproot-assets/proofs/decode
+```
+
 ## How it works
 
 This project uses docker-compose to start two containers:
@@ -31,34 +60,20 @@ lnd:/root/.lnd
 
 When lnd starts, a wallet is configured and unlocked (The password is `C4-t]-#6uV{BVPQ~`).
 
-## How to use it
+## How we create the project
 
-TODO Set the new name.
-- Download the project: `git clone https://github.com/royllo/lnd-taro-with-docker.git`
-- Go to the project directory: `cd lnd-taro-with-docker`
-- Start LND and Tarod: `docker-compose up`
-
-After some time, you will see this line : `SRVR: Taro Daemon fully active!`
-
-You can now Taro services with a command like this:
+After starting the containers with `docker-compose up`, we create a wallet in lnd with the command:
 
 ```
-curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
-        --insecure https://localhost:8089/v1/taproot-assets/assets
-```
-
-You can decode a proof with this command:
-
-```
-curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
-        --data @raw_proof \
-        --insecure https://localhost:8089/v1/taro/proofs/decode
+docker exec -it <LND Container Id> lncli --network=testnet create
 ```
 
 
 ## Wallet configured in LND
 
 The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
+
+24-word mnemonic separated by spaces: `above evoke spoon number inner shoe hire casual usage manual scan name fringe security verb cactus glad fork patch conduct two peace just detect`
 
 ---------------BEGIN LND CIPHER SEED---------------
 
@@ -73,7 +88,6 @@ The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
 Addresses :
 
 - **p2wkh** : tb1q9ep90x63j3n5dqqyn3jjf8kmpzf65tttupudyg
-- **np2wkh** : 2NEG6nf1uBHPGf8X9eyQ7pmUw53bnuamxxg
 
 ## Tips
 
