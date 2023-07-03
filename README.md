@@ -1,4 +1,4 @@
-# Taproot Assets docker environment (Running lnd tapd with a docker-compose)
+# Taproot Assets docker environment
 
 ## Goals
 
@@ -8,19 +8,18 @@ Lots of steps are required (Build Lnd, create wallet, setup neutrino, build tapd
 and if, like me, you are developing things using Taproot Assets (calling its API, getting data...), you don't want to 
 lose too much time on things like that.
 
-With this project, with only one command, you start an LND node (with a configured and unlocked wallet) and Taro (with
-RPC called enabled).
+With this project, with only one command, using docker, you start an LND node (with a configured and unlocked wallet)
+and Tapd (with RPC called enabled).
 
 You can focus on your project.
 
 ## How to use it
 
-TODO Set the new name.
 - Download the project: `git clone https://github.com/royllo/tade.git`
 - Go to the project directory: `cd tade`
 - Start LND and Tapd: `docker-compose up`
 
-After some time, you will see this line : `SRVR: Taro Daemon fully active!`
+After some time, you will see this line : `SRVR: Taproot Asset Daemon fully active!`
 
 Then, retrieve the macaroon FROM TAPD!!! :
 - `docker volume inspect tapd` to get the path of the volume.
@@ -34,14 +33,6 @@ curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)
         --insecure https://localhost:8089/v1/taproot-assets/assets
 ```
 
-You can decode a proof with this command:
-
-```
-curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
-        --data @roylloCoinProofDecoded \
-        --insecure https://localhost:8089/v1/taproot-assets/proofs/decode
-```
-
 ## How it works
 
 This project uses docker-compose to start two containers:
@@ -53,21 +44,12 @@ This project uses docker-compose to start two containers:
 This has been done by changing the Dockerfile of the `lnd` and `tapd` images with the command `COPY volume/ /root/.tapd`
 and `COPY volume/ /root/.lnd`.
 
-The tapd image have access to the /root/.lnd directory from the lnd image. This is done by adding the following line in docker-compose.yml:
-```
-lnd:/root/.lnd
-```
+The tapd image have access to the `/root/.lnd` directory from the lnd image. This is done by adding the following line 
+in docker-compose.yml: `lnd:/root/.lnd`
 
 When lnd starts, a wallet is configured and unlocked (The password is `C4-t]-#6uV{BVPQ~`).
 
-## How we create the project
-
-After starting the containers with `docker-compose up`, we create a wallet in lnd with the command:
-
-```
-docker exec -it <LND Container Id> lncli --network=testnet create
-```
-## Wallet configured in LND
+## Wallet configured
 
 The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
 
@@ -106,3 +88,4 @@ Then you can do an `ls` on the `Mountpoint` path.
 
 ### Get information about lnd with the
 `docker exec -it lnd /bin/lncli --macaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon getinfo`.
+
