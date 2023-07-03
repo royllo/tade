@@ -13,6 +13,9 @@ and Tapd (with RPC called enabled).
 
 You can focus on your project.
 
+There are some easier solutions like [https://github.com/davisv7/sashimi](https://github.com/davisv7/sashimi) but with
+Tade you can choose, thanks to the Docker files, the specific release of LND and TAPD you want to build and run.
+
 ## How to use it
 
 - Download the project: `git clone https://github.com/royllo/tade.git`
