@@ -23,11 +23,11 @@ TODO Set the new name.
 After some time, you will see this line : `SRVR: Taro Daemon fully active!`
 
 Then, retrieve the macaroon FROM TAPD!!! :
-- `docker volume inspect lnd` to get the path of the volume.
+- `docker volume inspect tapd` to get the path of the volume.
 - `sudo cp /var/lib/docker/volumes/tapd/_data/data/testnet/admin.macaroon .` to get the macaroon.
 - `sudo chown <your_user> admin.macaroon` to change the owner of the file.
 
-You can now Taro services with a command like this:
+You can now call Taro services with a command like this:
 
 ```
 curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
@@ -38,7 +38,7 @@ You can decode a proof with this command:
 
 ```
 curl    --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000 ./admin.macaroon)" \
-        --data @raw_proof \
+        --data @roylloCoinProofDecoded \
         --insecure https://localhost:8089/v1/taproot-assets/proofs/decode
 ```
 
@@ -67,8 +67,6 @@ After starting the containers with `docker-compose up`, we create a wallet in ln
 ```
 docker exec -it <LND Container Id> lncli --network=testnet create
 ```
-
-
 ## Wallet configured in LND
 
 The LND password for the wallet is `C4-t]-#6uV{BVPQ~`.
@@ -106,5 +104,5 @@ Then you can do an `ls` on the `Mountpoint` path.
 `docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)`
 
 
-- You can get information about lnd with the
-  command: `docker exec -it lnd /bin/lncli --macaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon getinfo`.
+### Get information about lnd with the
+`docker exec -it lnd /bin/lncli --macaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon getinfo`.
