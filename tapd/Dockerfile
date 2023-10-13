@@ -7,7 +7,7 @@ ENV GODEBUG netdns=cgo
 # Pass a tag, branch or a commit using build-arg.  This allows a docker
 # image to be built from a specified Git state.  The default image
 # will use the Git tip of master by default.
-ARG checkout="main"
+ARG checkout="v0.3.0-alpha.rc1"
 ARG git_url="https://github.com/lightninglabs/taproot-assets"
 
 # Install dependencies and build the binaries.
