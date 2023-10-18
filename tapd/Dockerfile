@@ -1,4 +1,4 @@
-FROM golang:1.20.5-alpine as builder
+FROM golang:1.21.3-alpine as builder
 
 # Force Go to use the cgo based DNS resolver. This is required to ensure DNS
 # queries required to connect to linked containers succeed.
@@ -7,7 +7,7 @@ ENV GODEBUG netdns=cgo
 # Pass a tag, branch or a commit using build-arg.  This allows a docker
 # image to be built from a specified Git state.  The default image
 # will use the Git tip of master by default.
-ARG checkout="v0.3.0-alpha.rc1"
+ARG checkout="v0.3.0-alpha.rc2"
 ARG git_url="https://github.com/lightninglabs/taproot-assets"
 
 # Install dependencies and build the binaries.
